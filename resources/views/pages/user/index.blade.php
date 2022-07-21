@@ -1,6 +1,7 @@
 @extends('main.user.main')
 
 @section('content')
+
 <div id="controls-carousel" class="relative px-8" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="overflow-hidden relative h-56 rounded-lg md:h-96 px-8">
@@ -57,9 +58,6 @@
             </a>
         </div>
     </div>
-    @endforeach
-    
+    @endforeach 
 </section>
-
-
 @endsection

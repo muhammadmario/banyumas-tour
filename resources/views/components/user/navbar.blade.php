@@ -4,6 +4,7 @@
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">DolanBanyumas</span>
     </a>
     <div class="flex md:order-2">
+      {{-- jika sudah login hilangkan button login, diganti button logout --}}
       @auth
       <form action="/logout" method="POST">
         @csrf

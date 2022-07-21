@@ -6,3 +6,11 @@ Website ini merupakan website pemesan tiket wisata pada kabupaten banyumas yang 
 Klik card wisata akan menampilkan deskripsi, alamat, harga wisata.
 Klik daftar harga akan menampilkan daftar harga tiket wisata.
 Klik tiket akan menampilkan form pemesanan tiket wisata.
+
+-- list akun
+---admin---
+email : admin@gmail.com
+pwd : Bismillah08
+---user---
+email : mario@gmail.com
+pwd : Bismillah08

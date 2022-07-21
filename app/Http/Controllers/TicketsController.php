@@ -15,7 +15,7 @@ class TicketsController extends Controller
      */
     public function index(Destination $destination)
     {
-        return view('pages.user.tiket', ['destinations'=>$destination->orderBy('name', 'ASC')->get()]);
+        return view('pages.user.tiket', ['destinations'=>$destination->orderBy('name', 'ASC')->get()]); //sort destinasi sesuai abjad
     }
 
     /**
@@ -36,7 +36,7 @@ class TicketsController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
+        // validasi request tiket
         $validatedData =  $request->validate([
             'name' => 'required|max:255',
             'NIK' => 'required|numeric|digits:16',
@@ -49,8 +49,9 @@ class TicketsController extends Controller
             'totalHarga' => 'required|numeric', 
         ]);
     
+        // buat tiket
         Tickets::create($validatedData);
-        return redirect('/')->with('status', 'Tiket berhasil ditambahkan!');
+        return redirect('/my-tiket')->with('status', 'Tiket berhasil ditambahkan!');
     }
 
     /**

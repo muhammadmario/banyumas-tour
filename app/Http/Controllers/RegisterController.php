@@ -15,6 +15,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+        // validasi request register
         $validated = $request->validate([
             'name' => 'required|max:255',
             'email'=>'required|unique:users|email:dns',
@@ -22,8 +23,10 @@ class RegisterController extends Controller
             'password'=> 'required'
         ]);
 
+        // encrypt password
         $validated['password']= Hash::make($validated['password']);
 
+        // buat user
         User::create($validated);
         
         return redirect('/login')->with('success', 'Register telah berhasil');

@@ -12,10 +12,7 @@
                     Alamat
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Jam buka
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Harga Tiket
+                    Harga
                 </th>
                 <th scope="col" class="py-3 px-6">
                     Aksi
@@ -32,9 +29,6 @@
                     {{ $destination->address }}
                 </td>
                 <td class="py-4 px-6">
-                    08.00 - 16.00
-                </td>
-                <td class="py-4 px-6">
                   Rp.{{ $destination->price }}
                 </td>
                 <td class="py-4 px-6">
@@ -42,8 +36,6 @@
                 </td>
             </tr>
             @endforeach
-           
-           
         </tbody>
     </table>
 </div>

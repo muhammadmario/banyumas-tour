@@ -1,7 +1,8 @@
 @extends('main.auth.main')
 
 @section('content')
-<form class="w-1/3 m-auto mt-8" action="/register" method="POST">
+{{-- form register --}}
+<form class="w-1/3 m-auto mt-8" action="/register" method="POST"> 
     @csrf
     <h3 class="text-xl text-center font-bold">Register</h3>
     <div class="mb-6">

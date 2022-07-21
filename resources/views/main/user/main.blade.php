@@ -11,7 +11,9 @@
     @include('components.user.navbar')
 
     @yield('content')
-    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    {{-- cdn flowbite js --}}
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script> 
+    {{-- cdn flowbite datepicker --}}
     <script src="https://unpkg.com/flowbite@1.4.7/dist/datepicker.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 @extends('main.admin.main')
 
 @section('content')
-<form class="w-1/2 mx-auto" action="/admin/wisata/{{ $destination->id }}" method="POST" enctype="multipart/form-data">
+{{-- form edit destinasi --}}
+<form class="w-1/2 mx-auto" action="/admin/wisata/{{ $destination->id }}" method="POST" enctype="multipart/form-data"> 
     @method('put')
     @csrf
       <h2 class="font-semibold text-xl mb-4">Edit Wisata</h2>

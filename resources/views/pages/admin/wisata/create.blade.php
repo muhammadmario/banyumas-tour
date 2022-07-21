@@ -1,7 +1,8 @@
 @extends('main.admin.main')
 
 @section('content')
-<form class="w-1/2 mx-auto" action="/admin/wisata" method="POST" enctype="multipart/form-data">
+{{-- form buat destinasi --}}
+<form class="w-1/2 mx-auto" action="/admin/wisata" method="POST" enctype="multipart/form-data"> 
     @csrf
       <h2 class="font-semibold text-xl mb-4">Tambah Wisata</h2>
       <div class="mb-6">

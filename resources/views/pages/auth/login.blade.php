@@ -15,7 +15,8 @@
     <button type="button" class="btn-close box-content w-4 h-4 p-1 ml-auto text-red-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
-<form class="w-1/3 m-auto mt-8" action="/login" method="POST">
+{{-- form login --}}
+<form class="w-1/3 m-auto mt-8" action="/login" method="POST"> 
     @csrf
     <h3 class="text-xl text-center font-bold">Login</h3>
     <div class="mb-6">

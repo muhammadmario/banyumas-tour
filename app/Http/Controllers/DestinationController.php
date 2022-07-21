@@ -36,6 +36,7 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
+        // validasi data request
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'address'=>'required',
@@ -45,10 +46,12 @@ class DestinationController extends Controller
             'image'=> 'image|file|max:2024'
         ]);
 
+        // jika ada request image taruh di folder image-wisata
         if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('image-wisata');
         }
 
+        // buat destinasi
         Destination::create($validatedData);
 
         return redirect('/admin/wisata')->with('success', 'Wisata berhasil ditambahkan!');
@@ -85,6 +88,7 @@ class DestinationController extends Controller
      */
     public function update(Request $request, Destination $destination)
     {
+        // validasi request yang masuk
         $rules =[
             'name' => 'required|max:255',
             'address'=>'required',
@@ -96,6 +100,7 @@ class DestinationController extends Controller
 
         $validateData = $request->validate($rules);
 
+        // jika ada image yang diganti hapus yang lama, ganti yang baru
         if ($request->file('image')) {
             if($destination->image){
                 Storage::delete($destination->image);
@@ -103,6 +108,7 @@ class DestinationController extends Controller
             $validateData['image']=$request->file('image')->store('image-destination');
         }
 
+        // edit destinasi berdasarkan id
         Destination::where('id', $destination->id)->update($validateData);
 
         return redirect('/admin/wisata')->with('success', 'Wisata Berhasil diubah!');
@@ -116,6 +122,7 @@ class DestinationController extends Controller
      */
     public function destroy(Destination $destination)
     {
+        // hapus image
         if($destination->image){
             Storage::delete($destination->image);
         }

@@ -14,11 +14,13 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
+        // validasi request login
         $credentials = $request->validate([
             'email' => ['required'],
             'password' => ['required'],
         ]);
 
+        // mengarahkan user sesuai role
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             
@@ -34,6 +36,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
+        // logout
         Auth::logout();
     
         $request->session()->invalidate();
